@@ -1,5 +1,4 @@
 import dns from "dns";
-
 dns.setServers(["8.8.8.8", "1.1.1.1"]);
 import dotenv from "dotenv";
 dotenv.config();
@@ -20,14 +19,7 @@ const port = process.env.PORT||3010;
 
 app.use(express.json());
 
-
-
-
-app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`);
-});
-
-
+app.use(express.static(resolve(__dirname,"public")));
 
 app.use("/api/users", userRouter);
 app.use("/api/todos", todoRouter);
@@ -36,7 +28,7 @@ app.use("/api/todos", todoRouter);
 mongoose.connect(process.env.MONGODB_URI)
   .then(() => {
     console.log("MongoDB connected");
-    app.listen(process.env.PORT, () => console.log(`Server running on ${process.env.PORT}`));
+    app.listen(port, () => console.log(`Server running on ${port}`));
   })
   .catch((err) => console.log("MongoDB connection error:", err));
 
