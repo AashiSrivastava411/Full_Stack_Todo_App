@@ -52,7 +52,6 @@ Ledger is a productivity-focused Todo application that allows users to create an
 
 ```text
 Ledger/
-│
 ├── controllers/
 │   ├── todo.controller.js
 │   └── user.controller.js
@@ -66,17 +65,17 @@ Ledger/
 │       ├── sub_todo.models.js
 │       └── user.models.js
 │
+├── public/
+│   ├── index.html
+│   ├── script.js
+│   └── style.css
+│
 ├── routes/
 │   ├── todo.routes.js
 │   └── user.routes.js
 │
-├── pages/
-│   └── index.html
-│
-├── static/
-│   └── script.js
-│
 ├── index.js
+├── .gitignore
 ├── package.json
-├── .env
 └── README.md
+
